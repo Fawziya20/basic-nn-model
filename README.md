@@ -6,7 +6,9 @@ To develop a neural network regression model for the given dataset.
 
 ## THEORY
 
-Explain the problem statement
+Neural networks consist of simple input/output units called neurons (inspired by neurons of the human brain). These input/output units are interconnected and each connection has a weight associated with it. Neural networks are flexible and can be used for both classification and regression. In this article, we will see how neural networks can be applied to regression problems.
+
+Regression helps in establishing a relationship between a dependent variable and one or more independent variables. Regression models work well only when the regression equation is a good fit for the data. Most regression models will not fit the data perfectly. Although neural networks are complex and computationally expensive, they are flexible and can dynamically pick the best type of regression, and if that is not enough, hidden layers can be added to improve prediction.
 
 ## Neural Network Model
 
@@ -43,25 +45,59 @@ Plot the performance plot
 Evaluate the model with the testing data.
 
 ## PROGRAM
+``` python3
+import pandas as pd
+from sklearn.model_selection import train_test_split
 
-Include your code here
+df=pd.read_csv("data.csv")
+
+df.tail()
+
+x=df[["Input"]].values
+
+y=df[["Output"]].values
+
+x_train,x_test,y_train,y_test=train_test_split(x,y,test_size=0.2,random_state=42)
+
+import tensorflow as tf
+
+model=tf.keras.Sequential([tf.keras.layers.Dense(16,activation='relu'),
+                           tf.keras.layers.Dense(8,activation='relu'),
+                           tf.keras.layers.Dense(1)])
+model.compile(loss="mae",optimizer="adam")
+
+history=model.fit(x_train,y_train,epochs=2000)
+
+import numpy as np
+
+pred=model.predict(x_test)
+pred
+
+tf.round(model.predict([[20]]))
+
+pd.DataFrame(history.history).plot()
+
+r=tf.keras.metrics.RootMeanSquaredError()
+r(y_test,pred)
+```
 
 ## Dataset Information
 
-Include screenshot of the dataset
+https://user-images.githubusercontent.com/75235128/187079548-d80dd933-6cb2-4cb7-9029-af1d632de9bb.png
 
 ## OUTPUT
 
 ### Training Loss Vs Iteration Plot
 
-Include your plot here
+![image](https://user-images.githubusercontent.com/75235022/187082446-c243f736-1120-49dd-a879-4e8e1dda7f35.png)
 
 ### Test Data Root Mean Squared Error
 
-Find the test data root mean squared error
+![image](https://user-images.githubusercontent.com/75235022/187082456-729d6e05-1c87-4624-a718-708010174527.png)
 
 ### New Sample Data Prediction
 
-Include your sample input and output here
+![image](https://user-images.githubusercontent.com/75235022/187082465-c0c44e01-a8dd-4b52-8bdb-194de65baba2.png)
 
 ## RESULT
+Thus a neural network regression model for the given dataset is written and executed successfully
