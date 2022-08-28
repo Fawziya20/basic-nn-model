@@ -83,21 +83,20 @@ r(y_test,pred)
 
 ## Dataset Information
 
-https://user-images.githubusercontent.com/75235128/187079548-d80dd933-6cb2-4cb7-9029-af1d632de9bb.png
+![image](https://user-images.githubusercontent.com/75235022/187082580-a63beb78-af92-4e0a-8ea5-e9a7f5a8f952.png)
 
 ## OUTPUT
 
 ### Training Loss Vs Iteration Plot
 
-![image](https://user-images.githubusercontent.com/75235022/187082446-c243f736-1120-49dd-a879-4e8e1dda7f35.png)
+![image](https://user-images.githubusercontent.com/75235022/187082567-8c8ebc24-ca23-4b9f-ae6d-293b29fb88fd.png)
 
 ### Test Data Root Mean Squared Error
 
-![image](https://user-images.githubusercontent.com/75235022/187082456-729d6e05-1c87-4624-a718-708010174527.png)
+![image](https://user-images.githubusercontent.com/75235022/187082598-3322ac46-f313-4d78-bab1-4e0c74ce50e1.png)
 
 ### New Sample Data Prediction
-
-![image](https://user-images.githubusercontent.com/75235022/187082465-c0c44e01-a8dd-4b52-8bdb-194de65baba2.png)
+![image](https://user-images.githubusercontent.com/75235022/187082616-f961f9d5-e459-4988-9102-c87d313648db.png)
 
 ## RESULT
 Thus a neural network regression model for the given dataset is written and executed successfully
